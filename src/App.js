@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
       <div className="search-container bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Check the weather</h1>
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Check the weather of a city</h1>
         <input
           type="text"
           placeholder="Enter city name"
