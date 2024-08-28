@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <div className="search-container">
+        <h1>Check the weather</h1>
         <input
           type="text"
           placeholder="Enter city name"
