@@ -35,35 +35,41 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="search-container">
-        <h1>Check the weather</h1>
+    <div className="App bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="search-container bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+        <h1 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Check the weather</h1>
         <input
           type="text"
           placeholder="Enter city name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          className="border border-gray-300 rounded-lg p-2 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button
+          onClick={handleSearch}
+          className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full"
+        >
+          Search
+        </button>
       </div>
-      {loading && <p>Loading data...</p>}
+      {loading && <p className="text-gray-700 mt-4">Loading data...</p>}
       {weatherData && (
-        <div className="weather-cards">
-          <div className="weather-card">
-            <h2>Temperature</h2>
-            <p>{weatherData.current.temp_c}°C</p>
+        <div className="weather-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 w-full max-w-4xl">
+          <div className="weather-card bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 className="text-xl font-semibold mb-2 text-gray-800">Temperature</h2>
+            <p className="text-4xl text-blue-500">{weatherData.current.temp_c}°C</p>
           </div>
-          <div className="weather-card">
-            <h2>Humidity</h2>
-            <p>{weatherData.current.humidity}%</p>
+          <div className="weather-card bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 className="text-xl font-semibold mb-2 text-gray-800">Humidity</h2>
+            <p className="text-4xl text-blue-500">{weatherData.current.humidity}%</p>
           </div>
-          <div className="weather-card">
-            <h2>Condition</h2>
-            <p>{weatherData.current.condition.text}</p>
+          <div className="weather-card bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 className="text-xl font-semibold mb-2 text-gray-800">Condition</h2>
+            <p className="text-4xl text-blue-500">{weatherData.current.condition.text}</p>
           </div>
-          <div className="weather-card">
-            <h2>Wind Speed</h2>
-            <p>{weatherData.current.wind_kph} km/h</p>
+          <div className="weather-card bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 className="text-xl font-semibold mb-2 text-gray-800">Wind Speed</h2>
+            <p className="text-4xl text-blue-500">{weatherData.current.wind_kph} km/h</p>
           </div>
         </div>
       )}
